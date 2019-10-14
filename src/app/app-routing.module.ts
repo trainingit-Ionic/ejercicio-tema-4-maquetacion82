@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'peliculas', loadChildren: './pages/explorar/peliculas/peliculas.module#PeliculasPageModule' },
   { path: 'musica', loadChildren: './pages/explorar/musica/musica.module#MusicaPageModule' },
   { path: 'libros', loadChildren: './pages/explorar/libros/libros.module#LibrosPageModule' },
+  { path: 'explorar', loadChildren: './explorar/explorar.module#ExplorarPageModule' },
 
 ];
 

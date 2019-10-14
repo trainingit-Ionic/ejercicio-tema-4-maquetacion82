@@ -13,24 +13,38 @@ const routes: Routes = [
     component: ExplorarPage,
     children: [
       {
-        path: 'peliculas',
-        loadChildren: './pages/explorar/peliculas/peliculas.module#PeliculasPageModule'
-         
+        path: 'libros',
+        children: [
+          {
+            path: '',
+            loadChildren: './libros/libros.module#LibrosPageModule'
+          }
+        ]
       },
       {
         path: 'musica',
-        loadChildren: './pages/explorar/musica/musica.module#MusicaPageModule'
+        children: [
+          {
+            path: '',
+            loadChildren: './musica/musica.module#MusicaPageModule'
+          }
+        ]
       },
       {
-        path: 'libros',
-        loadChildren: './pages/explorar/libros/libros.module#LibrosPageModule'
+        path: 'peliculas',
+        children: [
+          {
+            path: '',
+            loadChildren: './peliculas/peliculas.module#PeliculasPageModule'
+          }
+        ]
       },
+      {
+        path: '',
+        redirectTo: 'libros',
+        pathMatch: 'full'
+      }
     ]
-  },
-  {
-    path: '',
-    redirectTo: 'peliculas',
-    pathMatch: 'full'
   }
 ];
 
